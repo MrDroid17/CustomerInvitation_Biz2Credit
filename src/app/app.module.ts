@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CustomerComponent } from './component/customer/customer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material';
+import { MatTableModule, MatPaginatorModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerService } from './services/customer.service';
 
@@ -17,7 +17,8 @@ import { CustomerService } from './services/customer.service';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatSliderModule
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     CustomerService

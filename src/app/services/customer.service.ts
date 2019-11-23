@@ -11,10 +11,11 @@ export class CustomerService {
     private http: HttpClient
   ) { }
 
+
   getCustomersFromFile() {
-    return this.http.get('../assets/customer_data.txt')
+    return this.http.get('assets/customers.txt', { responseType: 'text' })
       .pipe(
-        map(res => res)
+        map(res => JSON.parse(res))
       );
   }
 }
