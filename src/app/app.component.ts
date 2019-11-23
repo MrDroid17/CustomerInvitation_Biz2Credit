@@ -24,9 +24,26 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
     this.customerService.getCustomersFromFile().subscribe(customers => {
-      this.dataSource = new MatTableDataSource<Customer>(customers);
+      this.dataSource = new MatTableDataSource<Customer>(customers.sort(this.sortById));
       this.dataSource.paginator = this.paginator;
 
     })
+  }
+
+
+  /**
+   * Sort function to sort array of object by user_id
+   * @param a 
+   * @param b 
+   */
+  sortById(a, b) {
+    const id1 = a.user_id;
+    const id2 = b.user_id;
+    let comparison = 0;
+
+    if (id1 > id2) comparison = 1;
+    else if (id1 < id2) comparison = -1;
+
+    return comparison;
   }
 }
