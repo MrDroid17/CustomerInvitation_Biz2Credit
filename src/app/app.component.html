@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1 class="mat-h1" color="warn">
+<div class="title">
+  <h1 class="mat-h1">
     Welcome to {{ title }}!
   </h1>
 </div>
@@ -12,10 +12,7 @@
       Customers
       For Invitation</button>
   </div>
-  <div>
-    <h6 class="mat-h6">Total Customer</h6>
-    <button mat-fab color="primary">{{customers?.length}}</button>
-  </div>
+  <app-customer-count [count]="customers.length"></app-customer-count>
   <div>
     <h6 class="mat-h6">Invite customers for food and drinks.</h6>
     <button mat-stroked-button color="primary" [disabled]="invitation_disabled" (click)="sendInvite()">Invite
@@ -23,31 +20,4 @@
   </div>
 </div>
 
-<div class="mat-elevation-z8 table-body">
-  <table mat-table [dataSource]="dataSource">
-    <ng-container matColumnDef="user_id">
-      <th mat-header-cell *matHeaderCellDef> User Id </th>
-      <td mat-cell *matCellDef="let element" class="hightlight-cell"> {{element.user_id}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element" class="hightlight-cell"> {{element.name}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="longitude">
-      <th mat-header-cell *matHeaderCellDef> Longitude </th>
-      <td mat-cell *matCellDef="let element" class="hightlight-cell"> {{element.longitude}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="latitude">
-      <th mat-header-cell *matHeaderCellDef> Latitude </th>
-      <td mat-cell *matCellDef="let element" class="hightlight-cell"> {{element.latitude}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
-</div>
+<app-customer-list [customers]="customers"></app-customer-list>

@@ -5,6 +5,11 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
+.title{
+  margin-top: 20px;
+  text-align: center;;
+}
+
 /* custom dialog */
 
 .confirm-dialog-container .mat-dialog-container {
@@ -42,4 +47,36 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   text-align: center;
   color: #f44336; // this is warn color
 }
+
+// custom styling
+
+.table-body{
+  width: 60%;
+  margin: 0 auto;
+  padding: 2%;
+  table, mat-paginator {
+    width: 100%;
+  }
+}
+
+.mat-header-cell {
+  color: white;
+  background: darkblue;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.flexify  {
+  padding: 30px 180px 30px 180px;
+  display: flex;
+  justify-content: space-around;
+
+  & .mat-fab{
+    margin-right: 60px;
+  }
+}
+
+
+
+
 
