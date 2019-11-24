@@ -1,6 +1,13 @@
-# Biz2Credit
+# Customer Invitation App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
+
+## Steps to run the app:
+* Clone the app
+* cd inside app
+* run ```npm install```
+* run ```ng serve``` to start the app 
+
 
 ## Development server
 
