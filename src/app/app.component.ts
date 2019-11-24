@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Customer } from './interface/customer';
 import { DialogService } from './services/dialog.service';
+import { Util } from 'sorting-customer';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit {
   }
   filteration_disabled = false;
   invitation_disabled = true;
+  util = new Util();
 
   displayedColumns: string[] = ['user_id', 'name', 'latitude', 'longitude'];
   dataSource: MatTableDataSource<Customer>;
@@ -35,7 +37,7 @@ export class AppComponent implements OnInit {
     this.customerService.getCustomersFromFile().subscribe(customers => {
       // Pass sorted array to datasource
       this.customers = customers;
-      this.dataSource = new MatTableDataSource<Customer>(this.customers.sort(this.sortById));
+      this.dataSource = new MatTableDataSource<Customer>(this.customers.sort(this.util.sortByUserId));
       this.dataSource.paginator = this.paginator;
     }, error => {
       alert(error);
@@ -68,9 +70,10 @@ export class AppComponent implements OnInit {
     this.customers = this.customers.filter(customer => {
       let lat2 = parseInt(customer.latitude);
       let lon2 = parseInt(customer.longitude);
-      if (this.getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) < 100) return true;
+      if (this.util.getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) < 100) return true;
     });
-    this.dataSource = new MatTableDataSource<Customer>(this.customers.sort(this.sortById));
+
+    this.dataSource = new MatTableDataSource<Customer>(this.customers.sort(this.util.sortByUserId));
     this.dataSource.paginator = this.paginator;
     this.filteration_disabled = true;
     this.invitation_disabled = false;
