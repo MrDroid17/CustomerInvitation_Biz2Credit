@@ -12,7 +12,7 @@
       Customers
       For Invitation</button>
   </div>
-  <app-customer-count [count]="customers.length"></app-customer-count>
+  <app-customer-count [count]="total"></app-customer-count>
   <div>
     <h6 class="mat-h6">Invite customers for food and drinks.</h6>
     <button mat-stroked-button color="primary" [disabled]="invitation_disabled" (click)="sendInvite()">Invite

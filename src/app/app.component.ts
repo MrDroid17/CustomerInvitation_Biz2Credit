@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
     latitude: 53.339428,
     longitude: -6.257664
   }
+  total: number;
   filteration_disabled = false;
   invitation_disabled = true;
   util = new Util();
@@ -37,6 +38,7 @@ export class AppComponent implements OnInit {
     this.customerService.getCustomersFromFile().subscribe(customers => {
       // Pass sorted array to datasource
       this.customers = customers;
+      this.total = customers.length;
     }, error => {
       alert(error);
     });

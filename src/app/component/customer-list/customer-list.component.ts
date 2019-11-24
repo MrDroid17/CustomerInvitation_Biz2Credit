@@ -19,7 +19,11 @@ export class CustomerListComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     this.customers = changes.customers.currentValue;
-    this.dataSource = new MatTableDataSource<Customer>(this.customers.sort(this.util.sortByUserId));
+    if (this.customers) {
+      this.customers.sort(this.util.sortByUserId);
+    }
+    this.dataSource = new MatTableDataSource<Customer>(this.customers);
     this.dataSource.paginator = this.paginator;
   }
+
 }
