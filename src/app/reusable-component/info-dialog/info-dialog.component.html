@@ -1,0 +1,14 @@
+<div>
+  <div class="container-x">
+    <span id="dialog-title">Info</span>
+    <button mat-icon-button id="close-icon" color='warn' (click)="closeInfoDialog()">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+  <div class="content-container">
+    <span class="content-span">{{data.message}}</span>
+  </div>
+  <div class="container-info-dialog">
+    <button mat-stroked-button id="yes-button" color='primary' [mat-dialog-close]="true">Okay</button>
+  </div>
+</div>

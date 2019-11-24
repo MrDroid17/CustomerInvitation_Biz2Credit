@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CustomerService {
+  CUSTOMER_FILE_PATH: string = 'assets/customers.txt';
 
   constructor(
     private http: HttpClient
@@ -13,7 +14,7 @@ export class CustomerService {
 
 
   getCustomersFromFile() {
-    return this.http.get('assets/customers.txt', { responseType: 'text' })
+    return this.http.get(this.CUSTOMER_FILE_PATH, { responseType: 'text' })
       .pipe(
         map(res => JSON.parse(res))
       );

@@ -14,3 +14,15 @@
   font-size: 18px;
 }
 
+.flexify  {
+  padding: 30px 180px 30px 180px;
+  display: flex;
+  justify-content: space-around;
+
+  & .mat-fab{
+    margin-right: 60px;
+  }
+}
+
+
+
