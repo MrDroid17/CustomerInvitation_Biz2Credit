@@ -5,13 +5,12 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-/* custom delete dialog */
+/* custom dialog */
 
 .confirm-dialog-container .mat-dialog-container {
   border-radius: 0.25em 0.25em 0.4em 0.4em;
   padding: 10px;
 }
-
 .confirm-dialog-container .content-container {
   margin: 5px 5px 15px 15px;
   color: grey;
@@ -29,24 +28,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   justify-content: space-between;
 }
 
-.confirm-dialog-container #no-button {
-  height: 40px;
-  width: 40%;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  font-size: 18px;
-  border-radius: 4px;
-}
-
-.confirm-dialog-container #yes-button {
-  height: 40px;
-  width: 40%;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  font-size: 18px;
-  border-radius: 4px;
-}
-
 .confirm-dialog-container span.content-span {
   padding: 15px 15px;
   text-align: center;
@@ -61,3 +42,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   text-align: center;
   color: #f44336; // this is warn color
 }
+

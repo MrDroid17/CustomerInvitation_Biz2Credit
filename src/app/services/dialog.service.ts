@@ -15,7 +15,7 @@ export class DialogService {
   openInfoDialog(msg) {
     const config = new MatDialogConfig();
     config.width = '350px';
-    config.disableClose = true;
+    config.disableClose = false;
     config.panelClass = 'confirm-dialog-container';
     config.data = {
       message: msg

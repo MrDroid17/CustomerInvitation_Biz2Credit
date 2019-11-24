@@ -90,8 +90,12 @@ export class AppComponent implements OnInit {
   degree2Radian = deg => deg * (Math.PI / 180);
 
   sendInvite() {
-    const message = `Invitation is successfully send to ${this.customers.length} Customers.`;
-    this.dialogService.openInfoDialog(message);
+    this.customers.forEach((customer, index) => {
+      console.log(`Invitation ${index + 1}: Sent to ${customer.name}`);
+      if (this.customers.length === (index + 1)) {
+        const message = `Invitation is successfully send to ${this.customers.length} Customers. \n See Browser console for details.`;
+        this.dialogService.openInfoDialog(message);
+      }
+    })
   }
-
 }
